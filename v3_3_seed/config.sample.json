@@ -1,0 +1,48 @@
+{
+  "run_profile": {
+    "page_budget": 20,
+    "min_delay_ms": 5000,
+    "max_delay_ms": 15000,
+    "headless": true,
+    "stabilize_ms": 7000,
+    "timeout_ms": 45000,
+    "zip": true,
+    "auto_consent": true
+  },
+  "targets": [
+    {
+      "id": "msn_en_us_news",
+      "url": "https://www.msn.com/en-us/news",
+      "locale": "en-US",
+      "section": "news",
+      "geo": "US",
+      "lang": "en"
+    },
+    {
+      "id": "msn_en_us_money",
+      "url": "https://www.msn.com/en-us/money",
+      "locale": "en-US",
+      "section": "money",
+      "geo": "US",
+      "lang": "en"
+    }
+  ],
+  "detection": {
+    "taboola_container_css": [
+      "[id*='taboola' i]",
+      "[class*='taboola' i]",
+      "[data-taboola]",
+      "script[src*='taboola' i]"
+    ],
+    "max_creatives_per_target": 30,
+    "license_keyword_regex": "\\b(fca|finanstilsynet|asa|asic|cysec|sec\\b|cftc|nfa|fsa\\b|regulated|authori[sz]ed|licen[cs]e(d)?|registered)\\b"
+  },
+  "urlscan": {
+    "enabled": false,
+    "visibility": "public",
+    "tags": [
+      "msn-taboola-watchdog"
+    ],
+    "max_submissions_per_run": 10
+  }
+}
