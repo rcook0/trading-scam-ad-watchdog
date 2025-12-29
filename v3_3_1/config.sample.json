@@ -1,0 +1,134 @@
+{
+  "run_profile": {
+    "page_budget": 20,
+    "min_delay_ms": 5000,
+    "max_delay_ms": 15000,
+    "headless": true,
+    "stabilize_ms": 7000,
+    "timeout_ms": 45000,
+    "zip": true,
+    "auto_consent": true
+  },
+  "targets": [
+    {
+      "id": "msn_en_us_news",
+      "url": "https://www.msn.com/en-us/news",
+      "locale": "en-US",
+      "section": "news",
+      "geo": "US",
+      "lang": "en"
+    },
+    {
+      "id": "msn_en_us_money",
+      "url": "https://www.msn.com/en-us/money",
+      "locale": "en-US",
+      "section": "money",
+      "geo": "US",
+      "lang": "en"
+    }
+  ],
+  "detection": {
+    "taboola_container_css": [
+      "[id*='taboola' i]",
+      "[class*='taboola' i]",
+      "[data-taboola]",
+      "script[src*='taboola' i]"
+    ],
+    "max_creatives_per_target": 30,
+    "license_keyword_regex": "\\\\b(fca|finanstilsynet|asa|asic|cysec|sec\\\\b|cftc|nfa|fsa\\\\b|regulated|authori[sz]ed|licen[cs]e(d)?|registered)\\\\b"
+  },
+  "urlscan": {
+    "enabled": false,
+    "visibility": "public",
+    "tags": [
+      "trading-scam-ad-watchdog"
+    ],
+    "max_submissions_per_run": 10,
+    "poll_for_result": false,
+    "poll_initial_wait_s": 10,
+    "poll_interval_s": 2,
+    "poll_timeout_s": 60
+  },
+  "risk": {
+    "enabled": true,
+    "high_risk_threshold": 30,
+    "medium_risk_threshold": 15,
+    "weights": {
+      "tld": 12,
+      "keyword_hit": 6,
+      "brand_mismatch": 8,
+      "shortener": 20,
+      "regulator_name_drop": 6,
+      "unresolved_tracking_click_url": 5
+    },
+    "tld_weights": {
+      ".top": 18,
+      ".xyz": 12,
+      ".click": 20,
+      ".site": 12,
+      ".online": 10,
+      ".live": 12,
+      ".icu": 15,
+      ".info": 8
+    },
+    "url_shorteners": [
+      "bit.ly",
+      "t.co",
+      "tinyurl.com",
+      "is.gd",
+      "cutt.ly",
+      "rebrand.ly"
+    ],
+    "tracking_domains": [
+      "trc.taboola.com",
+      "taboola.com",
+      "taboolasyndication.com",
+      "outbrain.com",
+      "zemanta.com"
+    ],
+    "keyword_regexes": [
+      "(?i)\\bguaranteed\\b",
+      "(?i)\\bprofit\\b",
+      "(?i)\\bget rich\\b",
+      "(?i)\\bautomated\\s+trading\\b|\\btrading\\s+bot\\b",
+      "(?i)\\bcrypto\\b|\\bbitcoin\\b",
+      "(?i)\\bcelebrity\\b|\\bexclusive\\b|\\bbreaking\\b",
+      "(?i)\\bno\\s+risk\\b|\\brisk\\-free\\b"
+    ],
+    "brand_stopwords": [
+      "the",
+      "a",
+      "an",
+      "and",
+      "or",
+      "to",
+      "of",
+      "in",
+      "on",
+      "for",
+      "with",
+      "from",
+      "by",
+      "news",
+      "today",
+      "report",
+      "reveals",
+      "this",
+      "that",
+      "you",
+      "your",
+      "their",
+      "our",
+      "how",
+      "why",
+      "what",
+      "when",
+      "where",
+      "new",
+      "top",
+      "best",
+      "all",
+      "now"
+    ]
+  }
+}
